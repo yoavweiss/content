@@ -5,7 +5,7 @@ page-type: web-api-interface
 browser-compat: api.WorkerGlobalScope
 ---
 
-{{APIRef("Web Workers API")}}
+{{APIRef("Web Workers API")}}{{AvailableInWorkers("worker")}}
 
 The **`WorkerGlobalScope`** interface of the [Web Workers API](/en-US/docs/Web/API/Web_Workers_API) is an interface representing the scope of any worker. Workers have no browsing context; this scope contains the information usually conveyed by {{domxref("Window")}} objects — in this case event handlers, the console or the associated {{domxref("WorkerNavigator")}} object. Each `WorkerGlobalScope` has its own event loop.
 
@@ -17,7 +17,7 @@ This interface is usually specialized by each worker type: {{domxref("DedicatedW
 
 _This interface inherits properties from the {{domxref("EventTarget")}} interface._
 
-- {{domxref("WorkerGlobalScope.caches")}} {{ReadOnlyInline}}
+- {{domxref("WorkerGlobalScope.caches")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
   - : Returns the {{domxref("CacheStorage")}} object associated with the current context. This object enables functionality such as storing assets for offline use, and generating custom responses to requests.
 - {{domxref("console")}} {{ReadOnlyInline}} {{Non-standard_inline}}
   - : Returns the {{domxref("console")}} associated with the worker.
@@ -50,31 +50,31 @@ _This interface inherits properties from the {{domxref("EventTarget")}} interfac
 
 _This interface inherits methods from the {{domxref("EventTarget")}} interface._
 
-- {{domxref("atob()", "WorkerGlobalScope.atob()")}}
+- {{domxref("WorkerGlobalScope.atob()")}}
   - : Decodes a string of data which has been encoded using base-64 encoding.
-- {{domxref("btoa()", "WorkerGlobalScope.btoa()")}}
+- {{domxref("WorkerGlobalScope.btoa()")}}
   - : Creates a base-64 encoded {{Glossary("ASCII")}} string from a string of binary data.
-- {{domxref("clearInterval()", "WorkerGlobalScope.clearInterval()")}}
-  - : Cancels the repeated execution set using {{domxref("setInterval()")}}.
-- {{domxref("clearTimeout()", "WorkerGlobalScope.clearTimeout()")}}
-  - : Cancels the delayed execution set using {{domxref("setTimeout()")}}.
-- {{domxref("createImageBitmap()", "WorkerGlobalScope.createImageBitmap()")}}
+- {{domxref("WorkerGlobalScope.clearInterval()")}}
+  - : Cancels the repeated execution set using {{domxref("WorkerGlobalScope.setInterval()")}}.
+- {{domxref("WorkerGlobalScope.clearTimeout()")}}
+  - : Cancels the delayed execution set using {{domxref("WorkerGlobalScope.setTimeout()")}}.
+- {{domxref("WorkerGlobalScope.createImageBitmap()")}}
   - : Accepts a variety of different image sources, and returns a {{jsxref("Promise")}} which resolves to an {{domxref("ImageBitmap")}}. Optionally the source is cropped to the rectangle of pixels originating at _(sx, sy)_ with width sw, and height sh.
 - {{domxref("WorkerGlobalScope.dump()")}} {{deprecated_inline}} {{non-standard_inline}}
   - : Allows you to write a message to stdout — i.e. in your terminal. This is the same as Firefox's {{domxref("window.dump")}}, but for workers.
-- {{domxref("fetch()", "WorkerGlobalScope.fetch()")}}
+- {{domxref("WorkerGlobalScope.fetch()")}}
   - : Starts the process of fetching a resource from the network.
 - {{domxref("WorkerGlobalScope.importScripts()")}}
   - : Imports one or more scripts into the worker's scope. You can specify as many as you'd like, separated by commas. For example: `importScripts('foo.js', 'bar.js');`.
-- {{domxref("queueMicrotask()", "WorkerGlobalScope.queueMicrotask()")}}
+- {{domxref("WorkerGlobalScope.queueMicrotask()")}}
   - : Queues a microtask to be executed at a safe time prior to control returning to the browser's event loop.
-- {{domxref("setInterval()", "WorkerGlobalScope.setInterval()")}}
+- {{domxref("WorkerGlobalScope.setInterval()")}}
   - : Schedules a function to execute every time a given number of milliseconds elapses.
-- {{domxref("setTimeout()", "WorkerGlobalScope.setTimeout()")}}
+- {{domxref("WorkerGlobalScope.setTimeout()")}}
   - : Schedules a function to execute in a given amount of time.
-- {{domxref("structuredClone()", "WorkerGlobalScope.structuredClone()")}}
+- {{domxref("WorkerGlobalScope.structuredClone()")}}
   - : Creates a [deep clone](/en-US/docs/Glossary/Deep_copy) of a given value using the [structured clone algorithm](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm).
-- {{domxref("reportError()", "WorkerGlobalScope.reportError()")}}
+- {{domxref("WorkerGlobalScope.reportError()")}}
   - : Reports an error in a script, emulating an unhandled exception.
 
 ## Events
@@ -103,7 +103,8 @@ importScripts("foo.js");
 console.log(navigator);
 ```
 
-> **Note:** Since the global scope of the worker script is effectively the global scope of the worker you are running ({{domxref("DedicatedWorkerGlobalScope")}} or whatever) and all worker global scopes inherit methods, properties, etc. from `WorkerGlobalScope`, you can run lines such as those above without specifying a parent object.
+> [!NOTE]
+> Since the global scope of the worker script is effectively the global scope of the worker you are running ({{domxref("DedicatedWorkerGlobalScope")}} or whatever) and all worker global scopes inherit methods, properties, etc. from `WorkerGlobalScope`, you can run lines such as those above without specifying a parent object.
 
 ## Specifications
 

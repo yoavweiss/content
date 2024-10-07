@@ -8,7 +8,8 @@ browser-compat: api.StorageAccessHandle.estimate
 
 {{APIRef("Storage Access API")}}
 
-> **Note:** See {{domxref("StorageManager.estimate()")}} to understand usage.
+> [!NOTE]
+> See {{domxref("StorageManager.estimate()")}} to understand usage.
 
 ## Syntax
 
@@ -22,13 +23,14 @@ None.
 
 ### Return value
 
-A {{jsxref("Promise")}} that fufills with an unpartitioned {{domxref("StorageManager.estimate()", "StorageEstimate")}} object.
+A {{jsxref("Promise")}} that fulfills with an unpartitioned {{domxref("StorageManager.estimate()", "StorageEstimate")}} object.
 
 ### Exceptions
 
 - `SecurityError` {{domxref("DomException")}}
   - : Thrown if access was not granted.
-- See {{domxref("StorageManager.estimate()")}}
+
+See {{domxref("StorageManager.estimate()")}}
 
 ## Examples
 
@@ -44,7 +46,8 @@ document.requestStorageAccess({ estimate: true }).then(
 );
 ```
 
-> **Note:** See [Using the Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using) for a more complete example.
+> [!NOTE]
+> See [Using the Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using) for a more complete example.
 
 ## Specifications
 

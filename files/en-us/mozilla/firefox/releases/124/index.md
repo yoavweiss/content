@@ -16,7 +16,6 @@ No notable changes.
 
 ### CSS
 
-- The [`content-visibility`](/en-US/docs/Web/CSS/content-visibility) CSS property value `auto` is now enabled by default. This allows content to skip rendering if it is not [relevant to the user](/en-US/docs/Web/CSS/CSS_containment#relevant_to_the_user). ([Firefox bug 1874874](https://bugzil.la/1874874)).
 - The {{cssxref("text-wrap")}} property has now been converted to a shorthand property and covers the constituent properties {{cssxref("text-wrap-mode")}} and {{cssxref("text-wrap-style")}}. ([Firefox bug 1758391](https://bugzil.la/1758391)).
 
 ### JavaScript
@@ -30,6 +29,7 @@ No notable changes.
 ### APIs
 
 - [`AbortSignal.any()`](/en-US/docs/Web/API/AbortSignal/any_static) is now supported, allowing a composite signal to be created that can be used to abort an operation from multiple signal sources. ([Firefox bug 1830781](https://bugzil.la/1830781)).
+- The [`WebSocket()` constructor](/en-US/docs/Web/API/WebSocket/WebSocket#url) now allows HTTPS, HTTP, and relative URLs. They are often more ergonomic than using WS and WSS URLs ([Firefox bug 1797449](https://bugzil.la/1797449)).
 
 ### WebDriver conformance (WebDriver BiDi, Marionette)
 

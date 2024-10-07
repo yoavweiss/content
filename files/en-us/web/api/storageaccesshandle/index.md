@@ -25,9 +25,9 @@ The **`StorageAccessHandle`** interface represents access to [unpartitioned stat
 ## Instance methods
 
 - {{domxref("StorageAccessHandle.getDirectory()")}}
-  - : Returns a {{jsxref("Promise")}} that fufills with an unpartitioned {{domxref("FileSystemDirectoryHandle")}} object if access was granted, and rejects otherwise.
+  - : Returns a {{jsxref("Promise")}} that fulfills with an unpartitioned {{domxref("FileSystemDirectoryHandle")}} object if access was granted, and rejects otherwise.
 - {{domxref("StorageAccessHandle.estimate()")}}
-  - : Returns a {{jsxref("Promise")}} that fufills with an unpartitioned {{domxref("StorageManager.estimate()", "StorageEstimate")}} object if access was granted, and rejects otherwise.
+  - : Returns a {{jsxref("Promise")}} that fulfills with an unpartitioned {{domxref("StorageManager.estimate()", "StorageEstimate")}} object if access was granted, and rejects otherwise.
 - {{domxref("StorageAccessHandle.createObjectURL()")}}
   - : Returns a string representing the unpartitioned blob storage url created if access was granted, and throws otherwise.
 - {{domxref("StorageAccessHandle.revokeObjectURL()")}}
@@ -51,7 +51,8 @@ document.requestStorageAccess({ localStorage: true }).then(
 );
 ```
 
-> **Note:** See [Using the Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using) for a more complete example.
+> [!NOTE]
+> See [Using the Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using) for a more complete example.
 
 ## Specifications
 

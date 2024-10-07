@@ -38,7 +38,7 @@ Access-Control-Allow-Headers: *
 - `<header-name>`
   - : The name of a supported request header. The header may list any number of headers, separated by commas.
 - `*` (wildcard)
-  - : The value "`*`" only counts as a special wildcard value for requests without credentials (requests without [HTTP cookies](/en-US/docs/Web/HTTP/Cookies) or HTTP authentication information). In requests with credentials, it is treated as the literal header name "`*`" without special semantics. Note that the {{HTTPHeader("Authorization")}} header can't be wildcarded and always needs to be listed explicitly.
+  - : The value `*` only counts as a special wildcard value for requests without credentials (requests without [HTTP cookies](/en-US/docs/Web/HTTP/Cookies) or HTTP authentication information). In requests with credentials, it is treated as the literal header name `*` without special semantics. Note that the {{HTTPHeader("Authorization")}} header can't be wildcarded and always needs to be listed explicitly.
 
 ## Examples
 
@@ -85,7 +85,7 @@ Origin: https://foo.bar.org
 
 #### Response
 
-If the CORS request indicated by the preflight request is authorized, the server will respond to the preflight request with a message that indicates the allowed origin, methods, and headers. Below we see that {{HTTPHeader("Access-Control-Allow-Headers")}} includes the headers that were requested.
+If the CORS request indicated by the preflight request is authorized, the server will respond to the preflight request with a message that indicates the allowed origin, methods, and headers. Below we see that `Access-Control-Allow-Headers` includes the headers that were requested.
 
 ```http
 HTTP/1.1 200 OK
